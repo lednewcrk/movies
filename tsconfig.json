@@ -16,7 +16,9 @@
       "tests": ["tests/*"],
       "@components/*": ["src/components/*"],
       "@routes/*": ["src/routes/*"],
-      "@screens/*": ["src/screens/*"]
+      "@screens/*": ["src/screens/*"],
+      "@services/*": ["src/services/*"],
+      "@api/*": ["src/services/api/*"]
     }
   },
   "exclude": [
