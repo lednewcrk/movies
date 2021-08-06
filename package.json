@@ -7,7 +7,7 @@
     "start:production": "cross-env NODE_ENV=production react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "yarn start:development",
     "test": "jest",
     "lint": "eslint ."
   },
