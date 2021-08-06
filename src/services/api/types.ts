@@ -26,7 +26,9 @@ export type Movie = {
   vote_count: boolean;
 };
 
-export type Error = {
+export type PaginatedDataMovie = PaginatedData<Movie>;
+
+export type APiError = {
   status_code: number;
   status_message: string;
   success: boolean;

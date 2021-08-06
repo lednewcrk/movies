@@ -1,10 +1,10 @@
-import {Movie, PaginatedData, Error} from '../types';
-import useGet from './fetchers/useGet';
-
-type Data = PaginatedData<Movie>;
+import {PaginatedDataMovie, APiError} from '../types';
+import useGet from '../../fetchers/useGet';
 
 export function useMovies() {
-  const {data, error} = useGet<Data, Error>('movie/upcoming');
+  const {data, error} = useGet<PaginatedDataMovie, APiError>('movie/upcoming', {
+    refreshWhenOffline: true,
+  });
 
-  return {data, error, isLoading: !data && !error};
+  return {data, error};
 }
