@@ -24,7 +24,6 @@ export default function Router() {
   const theme = isDarkTheme ? CombinedDarkTheme : CombinedDefaultTheme;
 
   function toggleTheme() {
-    console.log('toggle theme...');
     setIsDarkTheme(isDark => !isDark);
   }
 

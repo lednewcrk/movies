@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useMemo} from 'react';
 import {useCallback} from 'react';
 import {createContext} from 'use-context-selector';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   AuthenticationContextType,
@@ -19,8 +20,16 @@ export function AuthenticationProvider({
 }: AuthenticationProviderType) {
   const [user, setUser] = useState<User>(null);
 
+  useEffect(() => {
+    AsyncStorage.getItem('@user').then(
+      user => user && setUser(JSON.parse(user)),
+    );
+  }, []);
+
   const onLogin = useCallback(async () => {
     console.log('on login...');
+    setUser({});
+    AsyncStorage.setItem('@user', JSON.stringify({}));
   }, []);
 
   const isLoggedIn = useMemo(() => !!user, [user]);
