@@ -18,7 +18,10 @@
       "@routes/*": ["src/routes/*"],
       "@screens/*": ["src/screens/*"],
       "@services/*": ["src/services/*"],
-      "@api/*": ["src/services/api/*"]
+      "@api/*": ["src/services/api/*"],
+      "@values/*": ["src/values/*"],
+      "@context/*": ["src/context/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": [
