@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {useTheme} from 'react-native-paper';
 import {RecyclerListView, DataProvider} from 'recyclerlistview';
-import FastImage from 'react-native-fast-image';
+import Image from '@components/Image';
 
 import {getPostUri} from '@api/util';
 import {Movie} from '@api/types';
@@ -50,9 +50,9 @@ export default function Layout({data, error, onPressMovie}: Props) {
 
   const renderRow = (type: string | number, movie: Movie) => (
     <Pressable onPress={() => onPressMovie(movie)}>
-      <FastImage
+      <Image
         source={{uri: getPostUri(movie.poster_path)}}
-        style={{aspectRatio: 500 / 750}}
+        aspectRatio={500 / 750}
       />
       <Text>{movie.title}</Text>
     </Pressable>
