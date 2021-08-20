@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Provider as PaperProvider} from 'react-native-paper';
 
 import {AuthenticationProvider} from '@context/authentication/AuthenticationContext';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {CustomTheme} from '@values/theme';
 
 import {CombinedDefaultTheme, CombinedDarkTheme} from './theme';
