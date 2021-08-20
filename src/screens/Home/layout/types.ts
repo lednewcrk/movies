@@ -1,9 +1,11 @@
-import {PaginatedDataMovie, APiError, Movie} from '@api/types';
+import {APiError, Movie} from '@api/types';
 
 export type Props = {
-  data: PaginatedDataMovie | undefined;
+  data?: Movie[];
   error: APiError | undefined;
   onPressMovie: (movie: Movie) => void;
+  onEndReached: () => void;
+  onEndReachedThreshold?: number;
 };
 
 export enum ITEM_TYPE {
