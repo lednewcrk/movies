@@ -4,5 +4,4 @@ export type Props = {
   movie: Movie;
   empty?: boolean;
   onPressMovie: () => void;
-  aspectRatio?: number;
 };

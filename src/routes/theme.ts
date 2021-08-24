@@ -7,7 +7,7 @@ import {
   DefaultTheme as PaperDefaultTheme,
 } from 'react-native-paper';
 import deepmerge from 'deepmerge';
-import {LIGHT_THEME, DARK_THEME} from '@values/theme';
+import {LIGHT_THEME, DARK_THEME} from '@values/colors';
 
 export const CombinedDefaultTheme = deepmerge(
   deepmerge(PaperDefaultTheme, NavigationDefaultTheme),

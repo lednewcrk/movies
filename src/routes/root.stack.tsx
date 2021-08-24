@@ -1,19 +1,25 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
+// Screens
 import HomeScreen from '@screens/Home';
 import MovieDetailScreen from '@screens/MovieDetail';
+import LoginScreen from '@screens/Login';
+
+// Hooks
 import {useIsLoggedIn} from '@hooks/useIsLoggedIn';
+
+// Types
 import {
   AppDrawerParams,
   HomeStackParams,
   AuthenticationStackParams,
   RootStackParams,
 } from './types';
-import LoginScreen from 'screens/Login';
 
-const HomeStackNavigator = createNativeStackNavigator<HomeStackParams>();
+const HomeStackNavigator = createSharedElementStackNavigator<HomeStackParams>();
 function HomeStack() {
   return (
     <HomeStackNavigator.Navigator>
@@ -21,6 +27,10 @@ function HomeStack() {
       <HomeStackNavigator.Screen
         name={'MovieDetail'}
         component={MovieDetailScreen}
+        sharedElements={route => {
+          const {id} = route.params;
+          return [`item.${id}.photo`];
+        }}
       />
     </HomeStackNavigator.Navigator>
   );
@@ -36,7 +46,7 @@ function AppDrawer() {
 }
 
 const AuthenticationStackNavigator =
-  createNativeStackNavigator<AuthenticationStackParams>();
+  createStackNavigator<AuthenticationStackParams>();
 function AuthenticationStack() {
   return (
     <AuthenticationStackNavigator.Navigator>
@@ -48,7 +58,7 @@ function AuthenticationStack() {
   );
 }
 
-const RootStackNavigator = createNativeStackNavigator<RootStackParams>();
+const RootStackNavigator = createStackNavigator<RootStackParams>();
 export default function RootStack() {
   const {isLoggedIn} = useIsLoggedIn();
 

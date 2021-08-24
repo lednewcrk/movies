@@ -7,7 +7,7 @@ import MovieItem from '@components/MovieItem';
 import {Movie} from '@services/api/types';
 
 import {Props} from './types';
-import styles, {ITEM_ASPECT_RATIO} from './styles';
+import styles from './styles';
 import LayoutProvider from './LayoutProvider';
 
 const layoutProvider = new LayoutProvider();
@@ -33,11 +33,7 @@ export default function Layout({
 
   const rowRenderer = useCallback(
     (type: string | number, movie: Movie) => (
-      <MovieItem
-        movie={movie}
-        onPressMovie={() => onPressMovie(movie)}
-        aspectRatio={ITEM_ASPECT_RATIO}
-      />
+      <MovieItem movie={movie} onPressMovie={() => onPressMovie(movie)} />
     ),
     [],
   );

@@ -1,7 +1,9 @@
 import {Dimensions} from 'react-native';
 import {GridLayoutProvider} from 'recyclerlistview-gridlayoutprovider';
 
-import {NUM_OF_COLUMNS, ITEM_ASPECT_RATIO} from './styles';
+import Theme from '@values/theme';
+
+import {NUM_OF_COLUMNS} from './styles';
 
 export enum ViewTypes {
   ITEM,
@@ -14,7 +16,7 @@ export default class LayoutProvider extends GridLayoutProvider {
       NUM_OF_COLUMNS,
       () => ViewTypes.ITEM,
       () => 1,
-      () => deviceWidth * ITEM_ASPECT_RATIO,
+      () => deviceWidth * Theme.POSTER_ASPECT_RATIO,
     );
   }
 }

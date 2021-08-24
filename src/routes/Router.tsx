@@ -4,7 +4,7 @@ import {Provider as PaperProvider} from 'react-native-paper';
 
 import {AuthenticationProvider} from '@context/authentication/AuthenticationContext';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {CustomTheme} from '@values/theme';
+import {CustomTheme} from '@values/colors';
 
 import {CombinedDefaultTheme, CombinedDarkTheme} from './theme';
 import RootStack from './root.stack';
